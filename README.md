@@ -1,1 +1,2 @@
 # SuricatePHP
+Mini Framework PHP
