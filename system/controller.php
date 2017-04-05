@@ -1,8 +1,9 @@
 <?php 
 
 namespace System;
+use System\System;
 
-class Controller extends \System\System {
+class Controller extends System {
 
 	protected function view( $name, $data = null ){
 		if( is_array($data) && count($data) > 0 ){
