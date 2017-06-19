@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h1>SuricatePHP</h1>
+<h1>Welcome, Tacio's Framework</h1>
 
 </body>
 </html>
