@@ -14,6 +14,8 @@ class ConfigPath {
 		"aplication" => "App"
 	];
 
+	public static $helpers = [];
+
 	public static function define($key, $value) {
 		define($key,self::barderInDirectories($value));
 	}

@@ -3,14 +3,9 @@ namespace System;
 
 class System {
 	private $_url;
-
 	private $_explode;
-
-
 	public $_controller;
-
 	public $_action;
-
 	public $_params;
 
 	public function __construct(){

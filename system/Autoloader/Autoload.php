@@ -57,9 +57,10 @@ class Autoload {
 			return false;
 		}
 		$paths = [
-			APPPATH.'Controllers/',
+			/*APPPATH.'Controllers/',
 			APPPATH.'Libraries/',
-			APPPATH.'Models/',
+			APPPATH.'Models/',*/
+			BASEPATHSYSTEM . "\Helpers\\"
 		];
 		$class = str_replace('\\', '/', $class).'.php';
 		foreach ($paths as $path) {

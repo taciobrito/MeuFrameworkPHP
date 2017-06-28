@@ -4,10 +4,11 @@ namespace System;
 class Model{
 	protected $db;
 	public $_table;
+	public $_class;
 
 	public function __construct(){
 		require (__DIR__ . '/../app/config/database.php');
-		$this->db = new PDO('mysql:host=' . $db['hostname'] . ';dbname=' . $db['database'], $db['username'], $db['password']);
+		$this->db = new \PDO('mysql:host=' . $db['hostname'] . ';dbname=' . $db['database'], $db['username'], $db['password']);
 	}
 	
 	public function create( Array $data ){
@@ -23,12 +24,16 @@ class Model{
 		$where = ( isset($select['where']) ? "WHERE {$select['where']}" : "");
 		$limit = ( isset($select['limit']) ? "LIMIT {$select['limit']}" : "");
 		$offset = ( isset($select['offset']) ? "OFFSET {$select['offset']}" : "");
-		$groupby = ( isset($select['groupby']) ? "GROUP BY {$select['groupby']}" : "" );
-		$orderby = ( isset($select['orderby']) ? "ORDER BY {$select['orderby']}" : "");
-		
-		$sql = $this->db->prepare( "SELECT {$fields} FROM {$this->_table} {$join} {$where} {$groupby} {$orderby} {$limit} {$offset}" );
+		$group_by = ( isset($select['group_by']) ? "GROUP BY {$select['group_by']}" : "" );
+		$order_by = ( isset($select['order_by']) ? "ORDER BY {$select['order_by']}" : "");
+		// Prepare the query
+		$sql = $this->db->prepare( "SELECT {$fields} FROM {$this->_table} {$join} {$where} {$group_by} {$order_by} {$limit} {$offset}" );
+		// execute query
 		$sql->execute();
-		$sql->setFetchMode(PDO::FETCH_ASSOC);
+		// return object or object of class
+		if( $this->_class == '' ) $sql->setFetchMode(\PDO::FETCH_OBJ);
+			else $sql->setFetchMode(\PDO::FETCH_CLASS, $this->_class);
+		// return result
 		return $sql->fetchAll();
 	}
 
@@ -38,12 +43,12 @@ class Model{
 		$where = ( isset($select['where']) ? "WHERE {$select['where']}" : "");
 		$limit = ( isset($select['limit']) ? "LIMIT {$select['limit']}" : "");
 		$offset = ( isset($select['offset']) ? "OFFSET {$select['offset']}" : "");
-		$groupby = ( isset($select['groupby']) ? "GROUP BY {$select['groupby']}" : "" );
-		$orderby = ( isset($select['orderby']) ? "ORDER BY {$select['orderby']}" : "");
+		$group_by = ( isset($select['group_by']) ? "GROUP BY {$select['group_by']}" : "" );
+		$order_by = ( isset($select['order_by']) ? "ORDER BY {$select['order_by']}" : "");
 		
-		$sql = $this->db->prepare( "SELECT {$fields} FROM {$this->_table} {$join} {$where} {$groupby} {$orderby} {$limit} {$offset}" );
+		$sql = $this->db->prepare( "SELECT {$fields} FROM {$this->_table} {$join} {$where} {$group_by} {$order_by} {$limit} {$offset}" );
 		$sql->execute();
-		$sql->setFetchMode(PDO::FETCH_ASSOC);
+		$sql->setFetchMode(\PDO::FETCH_CLASS, $this->_class);
 		return $sql->fetch();
 	}
 	
