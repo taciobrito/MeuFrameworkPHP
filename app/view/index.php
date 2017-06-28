@@ -1,26 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title> Title </title>
-</head>
-<body>
+	<head>
+		<title> Tacio's Framework v.1.0 </title>
+	</head>
 
-	<h1>Welcome, Tacio's Framework</h1>
+	<body style="text-align: center">
+		
+		<h1><?php echo $message; ?></h1>
+		<p>Welcome, Tacio's Framework</p>	
 
-	<table style="width: 300px; text-align: left; border: solid 1px #ccc;">
-		<tr>
-			<th>Nome</th>
-			<th>Nascimento</th>
-		</tr>
-		<?php 
-			foreach ($clientes as $cliente) {
-				echo "<tr>";
-					echo "<td>" . $cliente->nome . "</td>";
-					echo "<td>" . \DateHelper::dateFormat($cliente->data_nascimento) . "</td>";
-				echo "</tr>";
-			}
-		?>
-	</table>
+	</body>
 
-</body>
 </html>

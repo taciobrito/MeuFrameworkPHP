@@ -4,4 +4,4 @@
 	define( 'MODEL', 'app/model/');
 	define( 'HELPERS', 'system/helpers/');
 	
-	define('BASE_URL', 'http://localhost/');
+	define('BASE_URL', 'http://localhost/meuFrameworkPHP/');

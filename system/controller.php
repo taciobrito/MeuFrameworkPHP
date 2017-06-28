@@ -10,7 +10,7 @@
 			require_once APPPATH . DIRECTORY_SEPARATOR . "View" . DIRECTORY_SEPARATOR . $name . '.php';
 		}
 
-		protected function site_url( $page = '' ){			
+		protected function site_url( $page = '' ){	
 			return BASE_URL . $page;
 		}
 	}

@@ -26,5 +26,6 @@
 		$start = new \System\System;
 		$start->run();
 	} catch (\Exception $e) {
-	 	echo "Error! " . $e->getMessage();
+	 	require_once VIEW . 'errors/404.php';
+	 	// echo "Error! " . $e->getMessage();
 	}

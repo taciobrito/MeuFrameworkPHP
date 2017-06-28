@@ -77,7 +77,7 @@ class Autoload {
 			require_once $file;
 			return $file;
 		} else {
-			throw new \Exception("Error 404", 1);			
+			throw new \Exception("Error 404", 1);
 		}
 		return false;
 	}
