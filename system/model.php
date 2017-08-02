@@ -45,10 +45,14 @@ class Model{
 		$offset = ( isset($select['offset']) ? "OFFSET {$select['offset']}" : "");
 		$group_by = ( isset($select['group_by']) ? "GROUP BY {$select['group_by']}" : "" );
 		$order_by = ( isset($select['order_by']) ? "ORDER BY {$select['order_by']}" : "");
-		
+		// Prepare the query
 		$sql = $this->db->prepare( "SELECT {$fields} FROM {$this->_table} {$join} {$where} {$group_by} {$order_by} {$limit} {$offset}" );
+		// execute query
 		$sql->execute();
-		$sql->setFetchMode(\PDO::FETCH_CLASS, $this->_class);
+		// return object or object of class
+		if( $this->_class == '' ) $sql->setFetchMode(\PDO::FETCH_OBJ);
+			else $sql->setFetchMode(\PDO::FETCH_CLASS, $this->_class);
+		// return result
 		return $sql->fetch();
 	}
 	
