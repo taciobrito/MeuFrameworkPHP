@@ -1,23 +1,18 @@
 <?php
-	require_once('app/config/constantes.php');
+	require __DIR__ . "/app/config/Config.php";
 
-	/*function __autoload( $file ) {
-		if ( file_exists(MODEL . $file . '.php') ){
-			require_once(MODEL . $file . '.php');
-		} else if ( file_exists(HELPERS . $file . '.php')){
-			require_once(HELPERS . $file . '.php');
-		} else {
-			die('Model or Helper not found!');
-		}
-	}*/
+	Config::define( "BASEPATH", __DIR__ );
+	Config::define( "BASEPATHSYSTEM", BASEPATH . DIRECTORY_SEPARATOR . Config::$system );
+	Config::define( "APPPATH", BASEPATH . DIRECTORY_SEPARATOR . Config::$application );
+	
+	Config::define( "CONTROLLER", APPPATH . DIRECTORY_SEPARATOR . Config::$controller . DIRECTORY_SEPARATOR );
+	Config::define( "VIEW", APPPATH . DIRECTORY_SEPARATOR . Config::$view . DIRECTORY_SEPARATOR );
+	Config::define( "MODEL", APPPATH . DIRECTORY_SEPARATOR . Config::$model . DIRECTORY_SEPARATOR );
+	Config::define( "HELPERS", BASEPATHSYSTEM . DIRECTORY_SEPARATOR . Config::$helper . DIRECTORY_SEPARATOR );
 
-	require __DIR__ . "/app/config/ConfigPath.php";
+	Config::define( 'BASE_URL', Config::$base_url );
 
-	ConfigPath::define("BASEPATH",__DIR__);
-	ConfigPath::define("BASEPATHSYSTEM",BASEPATH . DIRECTORY_SEPARATOR . ConfigPath::$system);
-	ConfigPath::define("APPPATH",BASEPATH . DIRECTORY_SEPARATOR . ConfigPath::$application);
-
-	require ConfigPath::barderInDirectories(BASEPATHSYSTEM . '/Autoloader/Autoload.php');
+	require Config::barderInDirectories(BASEPATHSYSTEM . '/Autoloader/Autoload.php');
 
 	$auto = new Autoload();
 	$auto->register();
@@ -29,3 +24,5 @@
 	 	require_once VIEW . 'errors/404.php';
 	 	// echo "Error! " . $e->getMessage();
 	}
+
+	if ( Config::$debugger ) $auto->getDebugger();

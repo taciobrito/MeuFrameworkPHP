@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.debugger {	
+		color: #666;
+		font-weight: bold;
+		padding: 5px;
+		margin-bottom: 5px;
+		border-bottom: 1px solid #666;
+		box-shadow: 1px 2px 2px #666;
+		position: fixed;
+		top: 0;
+		z-index: 5;
+		background: #fff;
+		width: 100%;
+}
+
+.debugger ul {
+		list-style-type: none;
+}
+
+.debugger ul li {
+		padding: 3px;
+}
+
+.debugger .arrow {
+		color: #2980b9;
+}
+
+.debugger .true {
+		color: #27ae60;
+}
+
+.debugger .false {
+		color: #c0392b;
+}

@@ -2,12 +2,18 @@
 <html>
 	<head>
 		<title> Tacio's Framework v.1.0 </title>
+
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->url( 'assets/css/style.css' ); ?>">
+
 	</head>
 
-	<body style="text-align: center">
-		
-		<h1><?php echo $message; ?></h1>
-		<p>Welcome, Tacio's Framework</p>	
+	<body>
+		<div style="text-align: center">
+
+			<h1><?php echo $hello; ?></h1>
+			<p><?php echo $message; ?></p>
+
+		</div>
 
 	</body>
 

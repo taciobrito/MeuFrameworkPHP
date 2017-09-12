@@ -4,6 +4,14 @@ class Autoload {
 	
 	protected $prefixes = [];
 
+	private $debugger = '';
+
+	public function getDebugger() {
+			echo "<div class='debugger'><ul>";
+			echo $this->debugger;
+			echo "</ul></div>";
+	}
+
 	public function register() {
 		spl_autoload_extensions('.php,.inc');
 
@@ -72,7 +80,7 @@ class Autoload {
 	}
 
 	protected function requireFile($file) {
-		 // echo $file." > ".(file_exists($file) ? "true" : "false") . "<br>";
+		$this->debugger .= "<li>" . $file . " <span class='arrow'>></span> <span class=" . (file_exists($file) ? "'true'>true" : "'false'>false" . "</span></li>" );
 		if (file_exists($file)) {
 			require_once $file;
 			return $file;

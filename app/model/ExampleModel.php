@@ -7,6 +7,10 @@
 		public $_class = 'App\Model\ExampleModel';
 
 		public function listAll() {
-			return $this->getAll();
+			return $this->select()->getAll();
+		}
+
+		public function listOne() {
+			return $this->select()->get();
 		}
 	}

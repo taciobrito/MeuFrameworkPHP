@@ -1,14 +1,26 @@
 <?php 
 
-class ConfigPath {
+class Config {
 	
 	public static $preg = array("\\","/");
 
-	public static $constantes = "App/Config/ConfigPath";
+	public static $constants = "App/Config/Config";
+
+	public static $base_url = "http://localhost/meuFrameworkPHP/";
+
+	public static $application = "App";
+
+	public static $controller = "Controller";
+	
+	public static $model = "Model";
+
+	public static $view = "View";
+
+	public static $helper = "Helpers";
 
 	public static $system = "System";
 
-	public static $application = "App";
+	public static $debugger = false;
 
 	public static $namespace = [
 		"aplication" => "App"
