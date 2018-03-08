@@ -23,21 +23,23 @@
 		<script>
 			$('#env').click(function(event) {
 					$.ajax({
-						url: 'http://localhost/app_personal/backend/service/postPersonal',
+						url: 'http://localhost/app_personal/backend/service/postStudent',
 						type: 'POST',
 						dataType: 'json',
 						data: {
-							// id_users: '',
-							cpf: '06062285195',
+							id_student: 15,
+							username: '05002556108',
 							password: '211540',
-							name: 'Algum nome que eu quis CKM',
-							birth_date: '2000-03-01',
-							Email: 'email.algum@mail.com',
-							cel: '(61)22223365',
-							cep: '72545-500',
+							loginType: 'personal',
+							name: 'Eduardo Lima Sauro',
+							student_password: '211540',
+							birth_date: '13/10/1985',
+							Email: 'email.ss@mail.com',
+							CPF: '06062285195',
+							cel: '(61)2222-3365',
+							CEP: '72545-500',
 							neighborhood: 'QR 315 H',
 							address: 'QUADRA DE SANTA MARIA',
-							cref: '22223365',
 						},
 						success: function(d) {
 							console.log(d);
