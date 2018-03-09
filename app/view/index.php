@@ -13,7 +13,8 @@
 			<h1><?php echo $hello; ?></h1>
 			<p><?php echo $message; ?></p>
 
-			<table style="width: 100%">
+
+			<!-- <table style="width: 100%">
 					<tr>
 						<th>#</th>
 						<th>nome</th>
@@ -50,9 +51,43 @@
 				<input type="password" name="password" /> <br>
 
 				<input type="submit" value="ENVIAR" /> 
-			</form>
+			</form> -->
+
+			<br><br><br>
+			<button id="env">Enviar</button>
+
 		</div>
 
+		<script src="<?php echo $this->url('assets/js/jquery.min.js'); ?>"></script>
+
+		<script>
+			$('#env').click(function(event) {
+					$.ajax({
+						url: 'http://localhost/app_personal/backend/service/postStudent',
+						type: 'POST',
+						dataType: 'json',
+						data: {
+							id_student: 15,
+							username: '05002556108',
+							password: '211540',
+							loginType: 'personal',
+							name: 'Eduardo Lima Sauro',
+							student_password: '211540',
+							birth_date: '13/10/1985',
+							Email: 'email.ss@mail.com',
+							CPF: '06062285195',
+							cel: '(61)2222-3365',
+							CEP: '72545-500',
+							neighborhood: 'QR 315 H',
+							address: 'QUADRA DE SANTA MARIA',
+						},
+						success: function(d) {
+							console.log(d);
+							console.log("success");
+						},
+					});
+				});
+		</script>
 	</body>
 
 </html>
