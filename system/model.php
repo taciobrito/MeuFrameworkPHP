@@ -16,7 +16,8 @@ class Model{
 		$fields = implode( ", ", array_keys( $data ) );
 		$values = "'" . implode( "','", array_values( $data ) )."'";
 		$this->db->query( "INSERT INTO {$this->_table} ({$fields}) VALUES ({$values})" );
-		return $this->db->lastInsertId();
+		$_id = $this->db->lastInsertId();
+		return $this->select( ['where'=>'id = ' . $_id] )->get();
 	}
 
 	public function select( Array $select = null ) {
@@ -54,6 +55,23 @@ class Model{
 		// return result
 		return $this->_sql->fetch();
 	}
+
+	public function belongsTo( $table ){
+		// $this->_sql = $this->db->prepare( "SELECT * FROM {$table} WHERE id = ");
+		// return $this->select( [''] )->get();
+	}
+
+	public function hasMany( $table ){
+		//
+	}
+
+	public function hasOne( $table ){
+		//
+	}
+
+	public function belongsToMany( $table ){
+		//
+	}	
 
 	public function showSql(){
 		return $this->_sql->queryString;

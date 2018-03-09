@@ -1,5 +1,5 @@
 <?php
-	$db['hostname'] = '';
-	$db['username'] = '';
-	$db['password'] = '';
-	$db['database'] = '';
+	$db['hostname'] = 'localhost';
+	$db['username'] = 'root';
+	$db['password'] = 'root';
+	$db['database'] = 'meu-framework-php';
