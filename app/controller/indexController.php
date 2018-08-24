@@ -26,10 +26,10 @@
 			$message = "pessoa criada com sucesso!"; 
 
 			$objeto = $this->model->create( [
-				'nome' => 'Paula Joyce', 
-				'cpf' => '622.060.851-95', 
-				'dt_nasc' => '1998-02-20', 
-				'endereco' => 'QR 313 CJ N CASA 32 SANTA MARIA NORTE DF', 
+				'nome' => 'Fulado de Tal', 
+				'cpf' => '321.561.561-00', 
+				'dt_nasc' => '1990-10-20', 
+				'endereco' => 'Avenida das araucárias', 
 			] );
 			
 			$this->view('criar', compact('hello', 'message', 'objeto'));
