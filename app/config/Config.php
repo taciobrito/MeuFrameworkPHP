@@ -6,6 +6,9 @@ class Config {
 
 	public static $constants = "App/Config/Config";
 
+	/*
+	*  Config BASE URL
+	*/
 	public static $base_url = "http://localhost/meuFrameworkPHP/";
 
 	public static $application = "App";
@@ -20,6 +23,9 @@ class Config {
 
 	public static $system = "System";
 
+	/*
+	* Set Debbuger
+	*/
 	public static $debugger = false;
 
 	public static $namespace = [
