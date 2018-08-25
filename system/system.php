@@ -74,7 +74,7 @@ class System
     public function getParam($name = null)
     {
         if($name != null){
-            return $this->_params[$name]; 
+            return (isset($this->_params[$name])) ? $this->_params[$name] : false; 
         } else {
             return $this->_params;
         }

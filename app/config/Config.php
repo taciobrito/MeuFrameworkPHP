@@ -9,7 +9,7 @@ class Config
     /*
     *  Config BASE URL
     */
-    public static $base_url = "http://localhost/meuFrameworkPHP/";
+    public static $base_url = "http://localhost/MeuFrameworkPHP/";
 
     public static $application = "App";
 

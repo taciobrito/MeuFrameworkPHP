@@ -5,8 +5,8 @@
 
     class ExampleModel extends Model 
     {
-        public $_table = 'pessoa';
-        // public $_class = 'App\Model\ExampleModel';
+        public $_table = 'table_name';
+        public $_class = 'App\Model\ExampleModel';
 
         public function listAll() 
         {
