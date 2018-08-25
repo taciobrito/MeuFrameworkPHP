@@ -1,6 +1,8 @@
 <?php
-	class ExampleHelper{
-		public function initialize(){
-			echo 'Hello!';
-		}
-	}
+    class ExampleHelper
+    {
+        public function initialize()
+        {
+            echo 'Hello!';
+        }
+    }

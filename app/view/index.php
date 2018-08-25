@@ -61,32 +61,31 @@
 		<script src="<?php echo $this->url('assets/js/jquery.min.js'); ?>"></script>
 
 		<script>
-			$('#env').click(function(event) {
+			// $('#env').click(function(event) {
 					$.ajax({
-						url: 'http://localhost/app_personal/backend/service/postStudent',
+						// url: 'https://insertweb.com.br/clientes/personal/service/postStudent',
+						url: 'http://localhost/app_personal/backend/service/postActivities/sent',
 						type: 'POST',
 						dataType: 'json',
 						data: {
-							id_student: 15,
+							loginType: 'personal',
 							username: '05002556108',
 							password: '211540',
-							loginType: 'personal',
-							name: 'Eduardo Lima Sauro',
-							student_password: '211540',
-							birth_date: '13/10/1985',
-							Email: 'email.ss@mail.com',
-							CPF: '06062285195',
-							cel: '(61)2222-3365',
-							CEP: '72545-500',
-							neighborhood: 'QR 315 H',
-							address: 'QUADRA DE SANTA MARIA',
+							id_personal: 22,
+							id_student: [9],
+							save_model: 1,
+							title: 'Ludicidade na educação ',
+							description: 'Ensinar aos alunos sobre Ludicidade, com apresentação oral de 20 minutos.',
+							date_activity: '2018-04-15',
+							// status: 1,
+							// id_student: 15,
 						},
 						success: function(d) {
 							console.log(d);
 							console.log("success");
 						},
 					});
-				});
+				// });
 		</script>
 	</body>
 

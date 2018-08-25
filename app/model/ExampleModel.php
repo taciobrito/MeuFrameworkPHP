@@ -1,16 +1,20 @@
 <?php 
-	namespace App\Model;
-	use System\Model;
+    namespace App\Model;
 
-	class ExampleModel extends Model {
-		public $_table = 'pessoa';
-		// public $_class = 'App\Model\ExampleModel';
+    use System\Model;
 
-		public function listAll() {
-			return $this->select()->getAll();
-		}
+    class ExampleModel extends Model 
+    {
+        public $_table = 'pessoa';
+        // public $_class = 'App\Model\ExampleModel';
 
-		public function listOne() {
-			return $this->select()->get();
-		}
-	}
+        public function listAll() 
+        {
+            return $this->select()->getAll();
+        }
+
+        public function listOne() 
+        {
+            return $this->select()->get();
+        }
+    }

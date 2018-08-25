@@ -1,44 +1,46 @@
 <?php 
 
-class Config {
-	
-	public static $preg = array("\\","/");
+class Config 
+{
+    public static $preg = array("\\","/");
 
-	public static $constants = "App/Config/Config";
+    public static $constants = "App/Config/Config";
 
-	/*
-	*  Config BASE URL
-	*/
-	public static $base_url = "http://localhost/meuFrameworkPHP/";
+    /*
+    *  Config BASE URL
+    */
+    public static $base_url = "http://localhost/meuFrameworkPHP/";
 
-	public static $application = "App";
+    public static $application = "App";
 
-	public static $controller = "Controller";
-	
-	public static $model = "Model";
+    public static $controller = "Controller";
+    
+    public static $model = "Model";
 
-	public static $view = "View";
+    public static $view = "View";
 
-	public static $helper = "Helpers";
+    public static $helper = "Helpers";
 
-	public static $system = "System";
+    public static $system = "System";
 
-	/*
-	* Set Debbuger
-	*/
-	public static $debugger = false;
+    /*
+    * Set Debbuger
+    */
+    public static $debugger = false;
 
-	public static $namespace = [
-		"aplication" => "App"
-	];
+    public static $namespace = array(
+        "aplication" => "App"
+    );
 
-	public static $helpers = [];
+    public static $helpers = array();
 
-	public static function define($key, $value) {
-		define($key,self::barderInDirectories($value));
-	}
+    public static function define($key, $value) 
+    {
+        define($key,self::barderInDirectories($value));
+    }
 
-	public static function barderInDirectories($value) {
-		return str_replace(self::$preg,DIRECTORY_SEPARATOR,$value);
-	}
+    public static function barderInDirectories($value) 
+    {
+        return str_replace(self::$preg, DIRECTORY_SEPARATOR, $value);
+    }
 }
