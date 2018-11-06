@@ -19,9 +19,12 @@
             return $base . $page;
         }
 
-        protected function json($json)
-        {    
-            return json_encode($json);
+        protected function dd($value, $exit = false)
+        {   
+            echo "<pre>"; 
+            print_r($value);
+            echo "</pre>";
+            if ($exit) exit();
         }
 
         public function post($key = '')

@@ -1,6 +1,8 @@
-<link rel="stylesheet" type="text/css" href='assets/css/style.css'>
+<?php $this->view('template/header'); ?>
 
-<div style="text-align: center; margin-top: 200px;">
+<div class="container text-center">
 	<h1>Error 404</h1>
 	<p>Page Not Found!</p>
 </div>
+
+<?php $this->view('template/footer'); ?>
