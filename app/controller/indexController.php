@@ -1,21 +1,18 @@
 <?php
-    namespace App\Controller;
 
-    use System\Controller;
+namespace App\Controller;
 
-    class IndexController extends Controller 
+use System\Controller;
+use App\Model\VendasModel;
+
+class IndexController extends Controller {
+    
+    public function index()
     {
-        public function __construct()
-        {
-            parent::__construct();
-        }
+        $hello = 'Hello Developers!'; 
+        $message = 'Welcome, Tacio\'s Framework'; 
 
-        public function index()
-        {
-            $hello = 'Hello Developers!'; 
-            $message = 'Welcome, Tacio\'s Framework'; 
+        $this->view('index', compact('hello', 'message'));
+    }
 
-            $this->view('index', compact('hello', 'message'));
-		}
-
-	}
+}

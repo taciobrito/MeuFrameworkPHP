@@ -48,27 +48,27 @@ class System
             array_pop($this->_explode);
         }
 
-        $i = 0;
-        if(!empty( $this->_explode)){
-            foreach ($this->_explode as $value){
-                if ($i % 2 == 0) {
-                    $key[] = $value;
-                } else {
-                    $values[] = $value;
-                }
-                $i++;
-            }
+        // $i = 0;
+        // if(!empty($this->_explode)){
+        //     foreach ($this->_explode as $value){
+        //         if ($i % 2 == 0) {
+        //             $key[] = $value;
+        //         } else {
+        //             $values[] = $value;
+        //         }
+        //         $i++;
+        //     }
 
-        } else{
-            $key = array();
-            $values = array();
-        }
+        // } else{
+        //     $key = array();
+        //     $values = array();
+        // }
 
-        if( count($key) == count($values) && !empty($key) && !empty($values) ){
-            $this->_params = array_combine($key, $values);
-        } else{
-            $this->_params = array();
-        }            
+        // if(count($key) == count($values) && !empty($key) && !empty($values)){
+        //     $this->_params = array_combine($key, $values);
+        // } else{
+        //     $this->_params = array();
+        // }
     }
 
     public function getParam($name = null)
@@ -92,12 +92,13 @@ class System
         require_once($controller_path);
         $app = new $this->_controller();
 
-        if( !method_exists($app, $this->_action)){
+        if(!method_exists($app, $this->_action)){
             throw new \Exception("Error: Action doesn't exist!", 1);
         }*/
 
         $action = $this->_action;
-        $app->$action();
+        call_user_func_array(array($app, $action), $this->_explode);
+        // $app->$action();
     }
 
 }
