@@ -14,6 +14,7 @@
         {
             $hello = 'Hello Developers!'; 
             $message = 'Welcome, Tacio\'s Framework'; 
+
             $this->view('index', compact('hello', 'message'));
 		}
 
